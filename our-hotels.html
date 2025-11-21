@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Hotels - Hasaways Travel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .hover-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+    .transition-all { transition: all 0.3s ease; }
+  </style>
+</head>
+<body class="bg-gray-50 font-sans">
+
+<!-- Navbar -->
+<nav class="bg-white shadow-md sticky top-0 z-50">
+  <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <a href="index.html" class="text-2xl font-bold text-indigo-600">Hasaways</a>
+    <ul class="flex space-x-6">
+      <li><a href="index.html" class="hover:text-indigo-600">Home</a></li>
+      <li><a href="our-hotels.html" class="text-indigo-600 font-semibold">Our Hotels</a></li>
+      <li><a href="destinations.html" class="hover:text-indigo-600">Destinations</a></li>
+      <li><a href="services.html" class="hover:text-indigo-600">Services</a></li>
+      <li><a href="contactus.html" class="hover:text-indigo-600">Contact Us</a></li>
+    </ul>
+  </div>
+  </nav>
+<!-- Hero Image Slider -->
+<section class="relative">
+  <div class="swiper heroSwiper h-screen">
+    <div class="swiper-wrapper">
+      
+      <!-- Slide 1 -->
+      <div class="swiper-slide relative">
+        <img src="images/slider7.jpg" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-black bg-opacity-30 flex flex-col items-center justify-center text-center text-white">
+          <h1 class="text-4xl md:text-6xl font-bold mb-4">Discover Paradise with Hasaways</h1>
+          <p class="text-lg md:text-2xl mb-6">Explore Sri Lanka’s untouched beauty</p>
+          <a href="#destinations" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-md transition">Explore Now</a>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="swiper-slide relative">
+        <img src="images/slider8.jpg" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-black bg-opacity-30 flex flex-col items-center justify-center text-center text-white">
+          <h1 class="text-4xl md:text-6xl font-bold mb-4">Adventure Awaits</h1>
+          <p class="text-lg md:text-2xl mb-6">Make memories that last a lifetime</p>
+          <a href="#services" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-md transition">Our Services</a>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="swiper-slide relative">
+        <img src="images/slider9.jpg" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-black bg-opacity-30 flex flex-col items-center justify-center text-center text-white">
+          <h1 class="text-4xl md:text-6xl font-bold mb-4">Travel in Comfort & Style</h1>
+          <p class="text-lg md:text-2xl mb-6">Luxury experiences, unforgettable journeys</p>
+          <a href="#contact" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-md transition">Contact Us</a>
+        </div>
+      </div>
+      
+     <!-- Slide 4 -->
+      <div class="swiper-slide relative">
+        <img src="images/slider10.jpg" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-black bg-opacity-30 flex flex-col items-center justify-center text-center text-white">
+          <h1 class="text-4xl md:text-6xl font-bold mb-4">Travel in Comfort & Style</h1>
+          <p class="text-lg md:text-2xl mb-6">Luxury experiences, unforgettable journeys</p>
+          <a href="#contact" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-md transition">Contact Us</a>
+        </div>
+      </div>
+
+
+    <!-- Pagination & Navigation -->
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</section>
+
+<script>
+  var heroSwiper = new Swiper(".heroSwiper", {
+    loop: true,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    effect: "fade",
+    fadeEffect: {
+      crossFade: true,
+    },
+  });
+</script>
+
+<!-- Hotels Grid -->
+<section class="container mx-auto px-6 py-16">
+  <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Our Hotels</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
+    
+    <!-- Hotel Card Example -->
+    <a href="heritance-kandalama.html" class="hover-card transition-all bg-white rounded-lg overflow-hidden shadow-lg">
+      <img src="images/heritance_kandalama.jpg" class="w-full h-48 object-cover">
+      <div class="p-4">
+        <h3 class="text-xl font-semibold mb-2">Heritance Kandalama</h3>
+        <p class="text-gray-600 text-sm">Luxury stay amidst nature in Dambulla, featuring modern amenities and serene views.</p>
+      </div>
+    </a>
+
+    <a href="jetwing-blue.html" class="hover-card transition-all bg-white rounded-lg overflow-hidden shadow-lg">
+      <img src="images/jetwing_blue.jpg" class="w-full h-48 object-cover">
+      <div class="p-4">
+        <h3 class="text-xl font-semibold mb-2">Jetwing Blue</h3>
+        <p class="text-gray-600 text-sm">Beachfront resort in Negombo with water

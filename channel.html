@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hasaways Travel Channel - Watch Our Adventures</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    html { scroll-behavior: smooth; }
+    /* Aspect ratio utility for responsive video embeds */
+    .aspect-video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      border-radius: 0.5rem;
+      background-color: #e5e7eb; /* Placeholder color while loading */
+    }
+    .aspect-video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    /* Loading spinner animation */
+    .loader {
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #4f46e5; /* Indigo-600 */
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      margin: 20px auto;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body class="font-sans bg-gray-50 flex flex-col min-h-screen">
+
+  <nav class="bg-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold text-indigo-600">Hasaways</a>
+      <ul class="flex space-x-6">
+        <li><a href="index.html" class="hover:text-indigo-600">Home</a></li>
+        <li><a href="channel.html" class="text-indigo-600 font-semibold">Channel</a></li>
+        <li><a href="our-hotels.html" class="hover:text-indigo-600">Our Hotel</a></li>
+        <li><a href="destinations.html" class="hover:text-indigo-600">Destinations</a></li>
+        <li><a href="services.html" class="hover:text-indigo-600">Services</a></li>
+        <li><a href="contact.html" class="hover:text-indigo-600">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="relative bg-cover bg-center h-[40vh]" style="background-image: url('images/slider2.jpg');">
+    <div class="absolute inset-0 bg-indigo-900 bg-opacity-60 flex items-center justify-center">
+      <div class="text-center text-white px-6">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4"><i class="fab fa-youtube text-red-500 mr-3"></i>Hasaways Channel</h1>
+        <p class="text-lg md:text-xl">Watch our latest adventures and travel guides through Sri Lanka.</p>
+        <a href="#" target="_blank" id="channelLinkBtn" class="mt-6 inline-flex items-center bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-full transition shadow-lg">
+            <i class="fab fa-youtube mr-2"></i> Subscribe on YouTube
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <main class="container mx-auto px-6 py-16 flex-grow">
+
+    <div id="loading-indicator" class="text-center py-20">
+        <div class="loader"></div>
+        <p class="text-gray-600 mt-4">Loading latest videos from YouTube...</p>
+    </div>
+
+    <div id="error-message" class="hidden text-center py-20 text-red-600">
+        <i class="fas fa-exclamation-triangle text-4xl mb-4"></i>
+        <p>Oops! Could not load videos right now. Please check back later.</p>
+    </div>
+
+
+    <section id="featured-video-section" class="hidden mb-20">
+      <div class="flex items-center mb-8">
+         <h2 class="text-3xl font-bold text-gray-800 relative inline-block">
+            Latest Adventure
+            <span class="absolute bottom-0 left-0 w-1/2 h-1 bg-indigo-600 rounded"></span>
+        </h2>
+      </div>
+      <div id="featured-video-content"></div>
+    </section>
+
+
+    <section id="archive-video-section" class="hidden">
+      <h2 class="text-2xl font-bold text-gray-800 mb-10 text-center">More Travel Stories</h2>
+      <div id="video-grid-content" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+    </section>
+
+  </main>
+
+  <footer class="bg-gray-800 text-white py-8 mt-auto">
+    <div class="container mx-auto px-6 text-center">
+      <p>&copy; 2025 Hasaways. All rights reserved.</p>
+      <div class="flex justify-center space-x-6 mt-4">
+        <a href="#" class="hover:text-indigo-400"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="hover:text-indigo-400"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="hover:text-indigo-400"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="hover:text-indigo-400"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // ==========================================
+        // වැදගත්: මෙතැනට ඔබේ YouTube Channel ID එක ඇතුලත් කරන්න.
+        // IMPORTANT: PASTE YOUR CHANNEL ID HERE
+        const youtubeChannelId = 'YOUR_CHANNEL_ID_HERE'; // උදාහරණයක්: 'UCBJycsmduvYEL83R_U4JriQ'
+        // ==========================================
+
+
+        const rss2jsonApiKey = 'Your_rss2json_API_Key_Here'; // (Optional: Only needed for high traffic sites. Leave as is for free tier)
+        const rssUrl = encodeURIComponent(`https://www.youtube.com/feeds/videos.xml?channel_id=${https://www.youtube.com/channel/UCKj-QCKxHbf8S36emmb4TUw}`);
+        // We use rss2json.com service to convert YouTube's XML feed to usable JSON data
+        const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${rssUrl}`;
+
+        const loadingIndicator = document.getElementById('loading-indicator');
+        const errorMessage = document.getElementById('error-message');
+        const featuredSection = document.getElementById('featured-video-section');
+        const featuredContent = document.getElementById('featured-video-content');
+        const archiveSection = document.getElementById('archive-video-section');
+        const gridContent = document.getElementById('video-grid-content');
+        const channelLinkBtn = document.getElementById('channelLinkBtn');
+
+
+        // Helper function to extract Video ID from a YouTube URL
+        function getVideoId(url) {
+            const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+            const match = url.match(regExp);
+            return (match && match[2].length === 11) ? match[2] : null;
+        }
+
+        // 1. Fetch data from YouTube via RSS2JSON
+        fetch(apiUrl)
+            .then(response => {
+                if (!response.ok) throw new Error('Network response was not ok');
+                return response.json();
+            })
+            .then(data => {
+                if (data.status !== 'ok') throw new Error('RSS Feed Failed');
+
+                const videos = data.items;
+
+                // Update Channel Link Button in Hero section
+                if(data.feed && data.feed.link) {
+                    channelLinkBtn.href = data.feed.link;
+                }
+
+                if (videos.length > 0) {
+                    // --- 2. Process the LATEST Video (The first item: videos[0]) ---
+                    const latestVideo = videos[0];
+                    const latestVideoId = getVideoId(latestVideo.link);
+                    const latestDescription = latestVideo.description ? latestVideo.description.substring(0, 150) + "..." : "Watch our newest adventure!";
+
+                    // Generate HTML for Featured Section
+                    featuredContent.innerHTML = `
+                      <div class="bg-white rounded-2xl shadow-xl overflow-hidden lg:flex">
+                        <div class="lg:w-2/3 p-4 md:p-6">
+                             <div class="aspect-video-container shadow-md">
+                                <iframe src="https://www.youtube.com/embed/${latestVideoId}?rel=0" title="${latestVideo.title}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <div class="lg:w-1/3 p-6 flex flex-col justify-center bg-indigo-50">
+                            <span class="text-sm font-semibold text-indigo-600 mb-2 uppercase tracking-wider animate-pulse">Newest Upload</span>
+                            <h3 class="text-2xl font-bold mb-4 text-gray-800 line-clamp-2">${latestVideo.title}</h3>
+                            <p class="text-gray-600 mb-6 text-sm">${latestDescription}</p>
+                            <a href="${latestVideo.link}" target="_blank" class="inline-flex items-center text-indigo-700 font-semibold hover:text-indigo-900 transition">
+                                Watch on YouTube <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                        </div>
+                      </div>
+                    `;
+                    featuredSection.classList.remove('hidden');
+
+
+                    // --- 3. Process older videos (The rest of the items: videos 1 to 9) ---
+                    // We take up to 9 older videos for the grid
+                    const olderVideos = videos.slice(1, 10);
+
+                    if (olderVideos.length > 0) {
+                        olderVideos.forEach(video => {
+                            const videoId = getVideoId(video.link);
+                            // Generate HTML for a grid item
+                            const gridItemHtml = `
+                                <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden group">
+                                    <div class="aspect-video-container">
+                                         <iframe src="https://www.youtube.com/embed/${videoId}?rel=0" loading="lazy" title="${video.title}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                    </div>
+                                    <div class="p-5">
+                                        <h3 class="text-lg font-semibold text-gray-800 group-hover:text-indigo-600 transition line-clamp-2">${video.title}</h3>
+                                        <p class="text-gray-500 text-sm mt-2">${new Date(video.pubDate).toLocaleDateString()}</p>
+                                    </div>
+                                </div>
+                            `;
+                            gridContent.insertAdjacentHTML('beforeend', gridItemHtml);
+                        });
+                        archiveSection.classList.remove('hidden');
+                    }
+
+                } else {
+                    // No videos found
+                    errorMessage.querySelector('p').textContent = "No videos found on this channel yet.";
+                    errorMessage.classList.remove('hidden');
+                }
+
+                // Hide loader on success
+                loadingIndicator.classList.add('hidden');
+
+            })
+            .catch(error => {
+                console.error('Error fetching YouTube videos:', error);
+                // Hide loader and show error message
+                loadingIndicator.classList.add('hidden');
+                errorMessage.classList.remove('hidden');
+            });
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Destinations - Hasaways Travel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    html { scroll-behavior: smooth; }
+    .parallax {
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+    }
+    .hover-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+    .transition-all { transition: all 0.3s ease; }
+  </style>
+</head>
+<body class="bg-gray-50 font-sans">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold text-indigo-600">Hasaways</a>
+      <ul class="flex space-x-6">
+        <li><a href="index.html" class="hover:text-indigo-600">Home</a></li>
+        <li><a href="our-hotels.html" class="hover:text-indigo-600">Our Hotels</a></li>
+        <li><a href="destinations.html" class="text-indigo-600 font-semibold">Destinations</a></li>
+        <li><a href="services.html" class="hover:text-indigo-600">Services</a></li>
+        <li><a href="contactus.html" class="hover:text-indigo-600">Contact Us</a></li>
+        <li><a href="aboutus.html" class="hover:text-indigo-600">About Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Top Large Banner -->
+  <section class="relative h-[600px] flex items-center justify-center text-center text-white">
+    <img src="images/slider5.jpg" alt="Sri Lanka Destinations" class="absolute inset-0 w-full h-full object-cover">
+    <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+    <div class="relative z-10 px-6">
+      <h1 class="text-5xl md:text-7xl font-bold mb-4">Explore Sri Lanka</h1>
+      <p class="text-xl md:text-2xl mb-6">Discover breathtaking destinations across Hill Country, Beaches, Wildlife, and Culture.</p>
+      <a href="#destinations-grid" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-md transition">See Destinations</a>
+    </div>
+  </section>
+
+  <!-- Destinations Grid -->
+  <section id="destinations-grid" class="container mx-auto px-6 py-16">
+    <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Top Destinations</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+
+      <!-- Hill Country & Nature -->
+        <a href="sigiriya.html" class="hover-card transition-all bg-white rounded-lg overflow-hidden shadow-lg">
+        <img src="images/sridaladamaligawa.jpg" alt="Sri Dalada Maligawa" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold mb-2">Sri Dalada Maligawa</h3>
+          <p class="text-gray-600 text-sm">Sri Dalada Maligawa is a sacred Buddhist temple in Kandy that houses the Tooth Relic of Lord Buddha and is a UNESCO World Heritage Site.</p>
+        </div>
+        <a href="anuradhapura.html" class="hover-card transition-all bg-white rounded-lg overflow-hidden shadow-lg">
+        <img src="images/anuradhapura.jpg" alt="Anuradhapura" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold mb-2">Anuradhapura</h3>
+          <p class="text-gray-600 text-sm">Anuradhapura is an ancient capital of Sri Lanka, known for its well-preserved ruins of ancient civilization and sacred Buddhist sites.</p>
+        </div>
+      <a href="polonnaruwa.html" class="hover-card transition-all bg-white rounded-lg overflow-hidden shadow-lg">
+        <img src="images/polonnaruwa.jpg" alt="polonnaruwa" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold mb-2">Polonnaruwa</h3>
+          <p class="text-gray-600 text-sm">Polonnaruwa is a UNESCO World Heritage city with remarkable ruins, ancient temples, and stone statues showcasing Sri Lanka’s royal history.</p>
+        </div>
+
+      <a href="sigiriya.html" class="hover-card transition-all bg-white rounded-lg overflow-hidden shadow-lg">
+        <img src="images/sigiriya.jpg" alt="Sigiriya" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold mb-2">Sigiriya Rock Fortress</h3>
+          <p class="text-gray-600 text-sm">Ancient rock fortress and UNESCO World Heritage Site.</p>
+        </div>
+      </a>
+      <a href="ella.html" class="hover-card transition-all bg-white rounded-lg overflow-hidden shadow-lg">
+        <img src="images/ella.jpg" alt="Ella" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold mb-2">Ella</h3>
+          <p class="text-gray-600 text-sm">Scenic mountain town with tea plantations and stunning views.</p>
+        </div>
+      </a>
+      <a href="nuwaraeliya.html" class="hover-card transition-all bg-white rounded-lg overflow-hidden shadow-lg">
+        <img src="images/nuwaraeliya.jpg" alt="Nuwara Eliya" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold mb-2">Nuwara Eliya</h3>
+          <p class="text-gray-600 text-sm">Beautiful hill country with tea plantations and waterfalls.</p>
+        </div>
+      </a>
+      <a href="hortonplains.html" class="hover-card transition-all bg-white rounded-lg overflow-hidden shadow-lg">
+        <img src="images/hortonplains.jpg" alt="Horton Plains" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold mb-2">Horton Plains</h3>
+          <p class="text-gray-600 text-sm">Highland plateau with breathtaking nature and trails.</p>
+        </div>
+      </a>
+      <a href="adamspeak.html" class="hover-card transition-all bg-white rounded-lg overflow-hidden shadow-lg">
+        <img src="images/adamspeak.jpg" alt="Adam's Peak" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold mb-2">Adam’s Peak</h3>
+          <p class="text-gray-600 text-sm">Famous pilgrimage site with stunning sunrise views.</p>
+        </div>
+      </a>
+      <a href="knuckles.html" class="hover-card transition-all bg-white rounded-lg overflow-hidden shadow-lg">
+        <img src="images/knuckles.jpg" alt="Knuckles Range" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold mb-2">Knuckles Range</h3>
+          <p class="text-gray-600 text-sm">Mountain range with hiking trails and biodiversity.</p>
+        </div>
+      </a>
+       <a href="kandeviharaya.html" class="hover-card transition-all bg-white rounded-lg overflow-hidden shadow-lg">
+        <img src="images/kandeviharaya.jpg" alt="kandeviharaya" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold mb-2">Kande Viharaya</h3>
+          <p class="text-gray-600 text-sm">Kande Viharaya, located in Aluthgama, is a major Buddhist temple famous for its towering Buddha statue and peaceful surroundings.</p>
+        </div>
+
+
+      <!-- Beaches & Coastal -->
+      <a href="mirissa.html" class="hover-card transition-all bg-white rounded-lg overflow-hidden shadow-lg">
+        <img src="images/mirissa.jpg" alt="Mirissa" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold mb-2">Mirissa</h3>
+          <p class="text-gray-600 text-sm">Tropical beach paradise perfect for relaxation.</p>
+        </div>
+      </a>
+      <a href="gallefort.html" class="hover-card transition-all bg-white rounded-lg overflow-hidden shadow-lg">
+        <img src="images/gallefort.jpg" alt="Galle Fort" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold mb-2">Galle Fort</h3>
+          <p class="text-gray-600 text-sm">Historic coastal city blending Dutch architecture and culture.</p>
+        </div>
+      </a>
+      <a href="unawatuna.html" class="hover-card transition-all bg-white rounded-lg overflow-hidden shadow-lg">
+        <img src="images/unawatuna.jpg" alt="Unawatuna" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold mb-2">Unawatuna</h3>
+          <p class="text-gray-600 text-sm">Popular beach destination with vibrant nightlife.</p>
+        </div>
+     </a>
+      <a href="arugambay.html" class="hover-card transition-all bg-white rounded-lg overflow-hidden shadow-lg">
+        <img src="images/arugambay.jpg" alt="Arugam Bay" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold mb-2">Arugam Bay</h3>
+          <p class="text-gray-600 text-sm">World-class surf destination with relaxed vibe.</p>
+        </div>
+      </a>
+      <a href="bentota.html" class="hover-card transition-all bg-white rounded-lg overflow-hidden shadow-lg">
+        <img src="images/bentota.jpg" alt="Bentota" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold mb-2">Bentota</h3>
+          <p class="text-gray-600 text-sm">Beautiful beaches with water sports and resorts.</p>
+        </div>
+     
+      </a>
+      <a href="trincomalee.html" class="hover-card transition-all bg-white rounded-lg overflow-hidden shadow-lg">
+        <img src="images/trincomalee.jpg" alt="Trincomalee" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold mb-2">Trincomalee</h3>
+          <p class="text-gray-600 text-sm">Coastal city with pristine beaches and history.</p>
+        </div>
+      </a>
+
+      <!-- Wildlife & Safari -->
+      <a href="yala.html" class="hover-card transition-all bg-white rounded-lg overflow-hidden shadow-lg">
+        <img src="images/yala.jpg" alt="Yala" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold mb-2">Yala National Park</h3>
+          <p class="text-gray-600 text-sm">Famous safari park with leopards and wildlife.</p>
+        </div>
+      </a>
+      <a href="wilpattu.html" class="hover-card transition-all bg-white rounded-lg overflow-hidden shadow-lg">
+        <img src="images/wilpattu.jpg" alt="Wilpattu" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold mb-2">Wilpattu</h3>
+          <p class="text-gray-600 text-sm">Largest national park with diverse wildlife.</p>
+        </div>
+      </a>
+      <a href="minneriya.html" class="hover-card transition-all bg-white rounded-lg overflow-hidden shadow-lg">
+        <img src="images/minneriya.jpg" alt="Minneriya" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold mb-2">Minneriya</h3>
+         
+
+      <!-- Add more cards for other destinations -->
+
+    </div>
+  </section>
+
+  <!-- Social Media Section -->
+  <section class="bg-indigo-50 py-8">
+    <div class="container mx-auto px-6 text-center">
+      <h3 class="text-2xl font-bold mb-4">Follow Us</h3>
+      <div class="flex justify-center space-x-6 text-indigo-600">
+        <a href="https://www.facebook.com/Hasaways01/" class="hover:text-indigo-800 text-3xl"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="hover:text-indigo-800 text-3xl"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@hasaways" class="hover:text-indigo-800 text-3xl"><i class="fab fa-youtube"></i></a>
+        <a href="mailto:hasaways@gmail.com" class="hover:text-indigo-800 text-3xl"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </section>
+ <!-- Floating WhatsApp Contact Button -->
+  <a href="https://wa.me/+94758162206" target="_blank" class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition z-50">
+    <i class="fab fa-whatsapp text-2xl"></i>
+  </a>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-8">
+    <div class="container mx-auto px-6 text-center">
+      <p>&copy; 2025 Hasaways. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
